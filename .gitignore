@@ -30,3 +30,6 @@
 *.exe
 *.out
 *.app
+
+# Content of the following directories
+build/
