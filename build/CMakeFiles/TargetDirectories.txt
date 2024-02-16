@@ -1,0 +1,3 @@
+/home/nsssayom/Dev/obadh/build/CMakeFiles/obadh.dir
+/home/nsssayom/Dev/obadh/build/CMakeFiles/edit_cache.dir
+/home/nsssayom/Dev/obadh/build/CMakeFiles/rebuild_cache.dir
