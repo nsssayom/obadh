@@ -1,42 +1,29 @@
-//! Obadh Debug Console
-//! 
-//! Interactive debugging and testing tool
+// crates/tools/cli/src/main.rs
 
-mod commands;
-mod debug;
-mod repl;
-
+use obadh_engine::processor::Processor;
 use std::io::{self, Write};
 
 fn main() -> io::Result<()> {
-    println!("Obadh Bengali IME - Debug Console v{}", env!("CARGO_PKG_VERSION"));
-    
+    println!("Obadh Bengali Input Method - Test Console");
+    println!("Type English characters for Bengali output (press Ctrl+C to exit)");
+
+    let mut processor = Processor::new();
     let mut input = String::new();
+
     loop {
-        print!("obadh> ");
+        print!("> ");
         io::stdout().flush()?;
-        
+
         input.clear();
         io::stdin().read_line(&mut input)?;
-        
+
         let input = input.trim();
-        match input {
-            "exit" | "quit" => break,
-            "help" => show_help(),
-            _ => process_input(input),
+        if input.is_empty() {
+            continue;
         }
+
+        // Process the entire input string
+        let output = processor.process_input(input);
+        println!("{}", output);
     }
-    
-    Ok(())
-}
-
-fn show_help() {
-    println!("Commands:");
-    println!("  help    Show this help");
-    println!("  exit    Exit the console");
-    println!("  quit    Exit the console");
-}
-
-fn process_input(input: &str) {
-    println!("Processing: {}", input);
 }

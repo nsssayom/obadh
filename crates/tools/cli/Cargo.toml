@@ -10,6 +10,7 @@ description = "Part of the Obadh Bengali Input Method Engine"
 log.workspace = true
 thiserror.workspace = true
 serde = { workspace = true, features = ["derive"] }
+obadh-engine = { path = "../../core/engine" }
 
 [dev-dependencies]
 test-case.workspace = true

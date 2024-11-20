@@ -1,17 +1,8 @@
-//! engine - Part of the Obadh Bengali Input Method
-//!
-//! This module provides core functionality for the input method engine.
-
+// crates/core/engine/src/lib.rs
 pub mod error;
 pub mod types;
 pub mod utils;
+pub mod processor;
 
-#[cfg(test)]
-mod tests {
-    use super::*;
-
-    #[test]
-    fn sanity_check() {
-        assert!(true);
-    }
-}
+// Re-export main types
+pub use processor::Processor;
