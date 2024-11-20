@@ -1,0 +1,43 @@
+[workspace]
+resolver = "2"
+members = [
+    "crates/core/bengali",
+    "crates/core/engine",
+    "crates/core/utils",
+    "crates/protocols/ime",
+    "crates/protocols/config",
+    "crates/platforms/linux/ibus",
+    "crates/platforms/linux/fcitx",
+    "crates/platforms/linux/wayland",
+    "crates/platforms/windows/tsf",
+    "crates/platforms/macos/input_method",
+    "crates/tools/cli"
+]
+
+[workspace.package]
+version = "0.1.0"
+edition = "2021"
+authors = ["Nazmus Shakib Sayom <sayom.shakib@utah.edu>"]
+license = "MIT OR Apache-2.0"
+repository = "https://github.com/nsssayom/obadh.git"
+
+[workspace.dependencies]
+# Logging & Error Handling
+log = "0.4"
+env_logger = "0.10"
+thiserror = "1.0"
+
+# Serialization
+serde = { version = "1.0", features = ["derive"] }
+serde_json = "1.0"
+
+# Testing & Benchmarking
+test-case = "3.1"
+pretty_assertions = "1.4"
+criterion = "0.5"
+
+# Unicode & Text Processing
+unicode-segmentation = "1.10"
+
+# Terminal UI
+crossterm = "0.27"
